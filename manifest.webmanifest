@@ -1,0 +1,10 @@
+{
+  "name": "IRONPEAK Strength System",
+  "short_name": "IRONPEAK",
+  "description": "Treinamento de força e powerlifting",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d0f12",
+  "theme_color": "#111318",
+  "icons": []
+}

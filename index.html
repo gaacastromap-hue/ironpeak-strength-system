@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111318">
+<meta name="description" content="IRONPEAK Strength System: treinos, powerlifting e evolução.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>IRONPEAK Strength System</title>
+<style>
+:root{--bg:#0d0f12;--panel:#171a20;--panel2:#20242c;--line:#303640;--text:#f3f5f7;--muted:#a7afba;--silver:#c5cbd3;--accent:#e1e5eb;--good:#8ad6a0;--warn:#f4cb76;--danger:#ff8d8d;--radius:16px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:var(--silver)}
+.app{max-width:1200px;margin:auto;min-height:100vh;padding-bottom:84px}.top{padding:22px 18px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#16191f,#0d0f12)}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border:1px solid #7f8997;border-radius:12px;display:grid;place-items:center;font-weight:900;letter-spacing:-2px;font-size:22px;background:linear-gradient(145deg,#303640,#111318)}h1{font-size:18px;letter-spacing:1.5px;margin:0} .sub{font-size:11px;letter-spacing:1.6px;color:var(--muted)}.tag{border:1px solid var(--line);border-radius:99px;padding:7px 10px;color:var(--muted);font-size:12px}
+main{padding:18px}.page{display:none}.page.active{display:block}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin:6px 0 18px}.heading h2{font-size:25px;margin:0 0 4px}.muted{color:var(--muted)}.small{font-size:12px}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;min-width:0}.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-4{grid-column:span 4}.metric{font-size:28px;font-weight:750;letter-spacing:-.7px;margin-top:7px}.label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1px}.btn{border:1px solid #737d8a;background:#e3e7ec;color:#111318;font-weight:700;border-radius:11px;padding:11px 14px;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn:hover{filter:brightness(1.06)}.btn.secondary{background:var(--panel2);border-color:var(--line);color:var(--text)}.btn.ghost{background:transparent;color:var(--silver);border-color:var(--line)}.btn.danger{background:#3a2024;border-color:#754047;color:#ffd9dc}.btn.full{width:100%}.actions{display:flex;gap:8px;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field label{font-size:12px;color:var(--muted)}input,select,textarea{width:100%;background:#0f1115;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px 12px;outline:none}input:focus,select:focus,textarea:focus{border-color:#9aa4b2}textarea{min-height:84px;resize:vertical}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.result{background:#101216;border:1px solid var(--line);border-radius:12px;padding:14px}.result strong{font-size:24px;display:block}.pill{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:4px 8px;font-size:11px;color:var(--silver);margin:2px}.barrow{display:flex;align-items:center;gap:7px;justify-content:center;flex-wrap:wrap;margin:14px 0}.plate{height:56px;min-width:40px;border-radius:7px;display:grid;place-items:center;padding:0 8px;font-weight:800;border:1px solid #8d96a3;color:#fff;background:#4a5360}.plate:nth-child(3n){background:#626d7b}.list{display:flex;flex-direction:column;gap:8px}.item{border:1px solid var(--line);background:#111419;border-radius:12px;padding:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}.item strong{display:block}.empty{border:1px dashed #454c57;border-radius:12px;padding:20px;text-align:center;color:var(--muted)}.tabs{position:fixed;bottom:0;left:0;right:0;z-index:5;background:rgba(15,17,21,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;justify-content:center;padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));gap:4px}.tabs button{flex:1;max-width:170px;background:transparent;border:0;color:var(--muted);padding:8px 4px;border-radius:10px;font-size:11px}.tabs button .ico{display:block;font-size:19px;margin-bottom:2px}.tabs button.active{color:#fff;background:#292e37}.notice{padding:11px 12px;border-radius:10px;background:#242a32;color:#dce1e8;font-size:13px}.notice.warn{background:#382e1b;color:#ffe5a5}.notice.good{background:#193324;color:#b9f2c7}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:10px 7px}th{color:var(--muted);font-weight:600}.scroll{overflow:auto}canvas{width:100%;height:220px;display:block}.sectiontitle{font-size:17px;margin:0 0 12px}.hide{display:none!important}
+@media(max-width:720px){main{padding:14px}.span-8,.span-6,.span-4{grid-column:span 12}.heading h2{font-size:22px}.tag{display:none}.formgrid{grid-template-columns:1fr 1fr}.top{padding:16px 14px}.metric{font-size:25px}.card{padding:14px}.tabs button{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="brand"><div class="logo">IP</div><div><h1>IRONPEAK</h1><div class="sub">STRENGTH SYSTEM · TEAM GABRIEL CASTRO</div></div></div>
+ <span class="tag">VERSÃO INICIAL · DADOS LOCAIS</span>
+</header>
+<main>
+<section class="page active" id="home">
+ <div class="heading"><div><h2>Painel de força</h2><div class="muted">Seu centro de treinamento, em um só lugar.</div></div><button class="btn" onclick="go('calculator')">＋ Calcular carga</button></div>
+ <div class="grid">
+  <div class="card span-4"><div class="label">Alunos cadastrados neste aparelho</div><div class="metric" id="metricStudents">0</div><div class="muted small">Os dados ficam neste navegador.</div></div>
+  <div class="card span-4"><div class="label">Sessões registradas</div><div class="metric" id="metricSessions">0</div><div class="muted small">Treinos salvos localmente.</div></div>
+  <div class="card span-4"><div class="label">Último total calculado</div><div class="metric" id="metricLoad">160 kg</div><div class="muted small">Exemplo inicial de 80% de 200 kg.</div></div>
+  <div class="card span-8"><h3 class="sectiontitle">Acesso rápido</h3><div class="grid">
+   <div class="span-6"><button class="btn secondary full" onclick="go('workouts')">＋ Montar treino</button></div>
+   <div class="span-6"><button class="btn secondary full" onclick="go('students')">＋ Cadastrar aluno</button></div>
+   <div class="span-6"><button class="btn secondary full" onclick="go('calculator')">⚖ Calculadora de anilhas</button></div>
+   <div class="span-6"><button class="btn secondary full" onclick="go('progress')">↗ Ver evolução</button></div>
+  </div></div>
+  <div class="card span-4"><h3 class="sectiontitle">Comece por aqui</h3><div class="list"><div class="item"><span>1. Configure a carga e a barra</span><span>✓</span></div><div class="item"><span>2. Cadastre seus alunos</span><span>→</span></div><div class="item"><span>3. Registre os treinos</span><span>→</span></div></div></div>
+  <div class="card span-12"><h3 class="sectiontitle">Últimos registros</h3><div id="recentSessions" class="empty">Nenhuma sessão registrada ainda. Vá em “Treinos” para começar.</div></div>
+ </div>
+</section>
+
+<section class="page" id="calculator">
+ <div class="heading"><div><h2>Calculadora de cargas</h2><div class="muted">Porcentagens, peso da barra e anilhas por lado.</div></div></div>
+ <div class="grid">
+  <div class="card span-6">
+   <div class="field"><label for="oneRM">1RM ou carga de referência (kg)</label><input id="oneRM" type="number" min="0" step="0.5" value="200"></div>
+   <div class="formgrid">
+    <div class="field"><label for="percent">Percentual (%)</label><input id="percent" type="number" min="0" max="200" step="0.5" value="80"></div>
+    <div class="field"><label for="barWeight">Peso da barra (kg)</label><select id="barWeight"><option value="20">20 kg</option><option value="15">15 kg</option><option value="10">10 kg</option><option value="5">5 kg</option><option value="custom">Personalizada</option></select></div>
+   </div>
+   <div class="field hide" id="customBarWrap"><label for="customBar">Peso personalizado da barra (kg)</label><input id="customBar" type="number" min="0" step="0.5" value="20"></div>
+   <div class="field"><label for="plates">Anilhas disponíveis (kg, separadas por vírgula)</label><input id="plates" value="25,20,15,10,5,2.5,1.25,1,0.5"></div>
+   <div class="field"><label for="roundMode">Como tratar uma carga que não dá para montar</label><select id="roundMode"><option value="nearest">Mostrar a combinação montável mais próxima</option><option value="down">Não ultrapassar a carga teórica</option><option value="exact">Exigir combinação exata</option></select></div>
+   <button class="btn full" onclick="calculate()">Calcular carga e anilhas</button>
+   <p class="muted small">Informe as anilhas que realmente existem na academia. Esta versão não controla quantidade física de cada disco.</p>
+  </div>
+  <div class="card span-6">
+   <h3 class="sectiontitle">Resultado</h3>
+   <div class="grid">
+    <div class="span-6"><div class="result"><span class="muted small">Carga teórica</span><strong id="theoretical">160 kg</strong></div></div>
+    <div class="span-6"><div class="result"><span class="muted small">Carga montável</span><strong id="actual">160 kg</strong></div></div>
+    <div class="span-6"><div class="result"><span class="muted small">Por lado</span><strong id="perSide">70 kg</strong></div></div>
+    <div class="span-6"><div class="result"><span class="muted small">% efetivo</span><strong id="effective">80%</strong></div></div>
+   </div>
+   <h3 class="sectiontitle" style="margin-top:18px">Anilhas em cada lado</h3>
+   <div id="plateResult" class="barrow"><span class="plate">25</span><span class="plate">20</span><span class="plate">25</span></div>
+   <div id="calcMessage" class="notice">Carga inicial de exemplo. Pressione calcular para atualizar.</div>
+   <button class="btn secondary full" style="margin-top:12px" onclick="saveCalc()">Salvar como referência do treino</button>
+  </div>
+ </div>
+</section>
+
+<section class="page" id="students">
+ <div class="heading"><div><h2>Meus alunos</h2><div class="muted">Cadastro local para organizar a primeira versão.</div></div></div>
+ <div class="grid">
+  <div class="card span-4"><h3 class="sectiontitle">Cadastrar aluno</h3>
+   <div class="field"><label for="studentName">Nome</label><input id="studentName" placeholder="Nome do aluno"></div>
+   <div class="field"><label for="studentGoal">Objetivo</label><select id="studentGoal"><option>Powerlifting</option><option>Hipertrofia</option><option>Força geral</option><option>Condicionamento</option><option>Outro</option></select></div>
+   <div class="formgrid"><div class="field"><label for="studentSquat">Agachamento (kg)</label><input id="studentSquat" type="number" min="0" step="0.5"></div><div class="field"><label for="studentBench">Supino (kg)</label><input id="studentBench" type="number" min="0" step="0.5"></div></div>
+   <div class="field"><label for="studentDeadlift">Terra (kg)</label><input id="studentDeadlift" type="number" min="0" step="0.5"></div>
+   <button class="btn full" onclick="addStudent()">Salvar aluno</button>
+  </div>
+  <div class="card span-8"><h3 class="sectiontitle">Alunos cadastrados</h3><div id="studentList" class="empty">Nenhum aluno cadastrado.</div></div>
+ </div>
+</section>
+
+<section class="page" id="workouts">
+ <div class="heading"><div><h2>Treinos</h2><div class="muted">Monte uma sessão e registre o que foi executado.</div></div></div>
+ <div class="grid">
+  <div class="card span-4"><h3 class="sectiontitle">Nova sessão</h3>
+   <div class="field"><label for="workoutStudent">Atleta</label><select id="workoutStudent"><option value="self">Meu treino</option></select></div>
+   <div class="field"><label for="workoutName">Nome da sessão</label><input id="workoutName" placeholder="Ex.: Supino e acessórios" value="Treino de força"></div>
+   <div class="field"><label for="exerciseName">Exercício</label><select id="exerciseName"><option>Agachamento livre</option><option>Supino reto</option><option>Levantamento terra</option><option>Agachamento com pausa</option><option>Supino com pausa</option><option>Terra romeno</option><option>Remada</option><option>Outro</option></select></div>
+   <div class="field hide" id="customExerciseWrap"><label for="customExercise">Nome do exercício</label><input id="customExercise"></div>
+   <div class="formgrid"><div class="field"><label for="sets">Séries</label><input id="sets" type="number" min="1" value="4"></div><div class="field"><label for="reps">Repetições</label><input id="reps" type="number" min="1" value="5"></div></div>
+   <div class="formgrid"><div class="field"><label for="plannedLoad">Carga prescrita (kg)</label><input id="plannedLoad" type="number" min="0" step="0.5" value="100"></div><div class="field"><label for="rpe">RPE alvo</label><input id="rpe" type="number" min="1" max="10" step="0.5" placeholder="Opcional"></div></div>
+   <div class="field"><label for="workoutNotes">Observações</label><textarea id="workoutNotes" placeholder="Dicas técnicas, descanso, execução..."></textarea></div>
+   <button class="btn full" onclick="addWorkout()">Adicionar exercício à sessão</button>
+  </div>
+  <div class="card span-8"><div class="heading"><div><h3 class="sectiontitle">Sessões registradas</h3><div class="muted small">Os registros podem ser editados ou excluídos neste aparelho.</div></div><button class="btn secondary" onclick="exportCSV()">Exportar CSV</button></div><div id="workoutList" class="empty">Nenhum exercício registrado.</div></div>
+ </div>
+</section>
+
+<section class="page" id="progress">
+ <div class="heading"><div><h2>Evolução</h2><div class="muted">Visualização dos registros salvos nesta versão.</div></div><button class="btn secondary" onclick="exportJSON()">Exportar backup</button></div>
+ <div class="grid">
+  <div class="card span-12"><h3 class="sectiontitle">Cargas registradas por sessão</h3><canvas id="progressChart" width="900" height="260"></canvas><div class="muted small">O gráfico usa a carga registrada em cada exercício. Para uma análise longitudinal confiável, registre várias sessões do mesmo exercício.</div></div>
+  <div class="card span-12"><h3 class="sectiontitle">Histórico completo</h3><div id="progressTable" class="empty">Ainda não há dados suficientes para exibir o histórico.</div></div>
+ </div>
+</section>
+
+<section class="page" id="library">
+ <div class="heading"><div><h2>Central de Conhecimento</h2><div class="muted">Organize links, vídeos e dicas técnicas.</div></div></div>
+ <div class="grid">
+  <div class="card span-4"><h3 class="sectiontitle">Adicionar conteúdo</h3>
+   <div class="field"><label for="contentTitle">Título</label><input id="contentTitle" placeholder="Ex.: Como posicionar no supino"></div>
+   <div class="field"><label for="contentCategory">Categoria</label><select id="contentCategory"><option>Técnica</option><option>Biomecânica</option><option>Nutrição</option><option>Suplementação</option><option>Recuperação</option><option>Competição</option><option>Outro</option></select></div>
+   <div class="field"><label for="contentUrl">Link do vídeo ou material</label><input id="contentUrl" type="url" placeholder="https://..."></div>
+   <div class="field"><label for="contentNotes">Descrição / dica</label><textarea id="contentNotes"></textarea></div>
+   <button class="btn full" onclick="addContent()">Salvar conteúdo</button>
+   <div class="notice warn" style="margin-top:12px">Nesta versão inicial, o conteúdo é salvo como link. Upload de vídeos, login de alunos e compartilhamento online exigem backend e armazenamento próprios, que ainda não estão configurados.</div>
+  </div>
+  <div class="card span-8"><h3 class="sectiontitle">Biblioteca</h3><div id="contentList" class="empty">Nenhum conteúdo adicionado.</div></div>
+ </div>
+</section>
+
+<section class="page" id="settings">
+ <div class="heading"><div><h2>Configurações e dados</h2><div class="muted">Gerencie os dados guardados neste navegador.</div></div></div>
+ <div class="grid">
+  <div class="card span-6"><h3 class="sectiontitle">Backup</h3><p class="muted">Exporte uma cópia dos alunos, sessões e conteúdos. Guarde o arquivo em local seguro.</p><button class="btn full" onclick="exportJSON()">Baixar backup JSON</button><div style="height:10px"></div><label class="btn secondary full" for="importFile">Importar backup JSON</label><input class="hide" id="importFile" type="file" accept=".json,application/json" onchange="importJSON(event)"></div>
+  <div class="card span-6"><h3 class="sectiontitle">Aviso sobre esta versão</h3><div class="notice warn">Os dados ficam salvos localmente neste navegador. Ainda não há contas, sincronização entre dispositivos, permissões de aluno, armazenamento de vídeos ou backup automático em nuvem.</div><p class="muted small">Não use esta versão como banco de dados único para informações importantes dos alunos. Exporte backups regularmente.</p></div>
+  <div class="card span-12"><h3 class="sectiontitle">Apagar dados locais</h3><p class="muted">Remove os alunos, sessões e conteúdos salvos neste navegador. Exporte um backup antes de continuar.</p><button class="btn danger" onclick="clearData()">Apagar todos os dados locais</button></div>
+ </div>
+</section>
+</main>
+<nav class="tabs">
+ <button class="active" data-page="home" onclick="go('home')"><span class="ico">⌂</span>Início</button>
+ <button data-page="calculator" onclick="go('calculator')"><span class="ico">⚖</span>Cargas</button>
+ <button data-page="workouts" onclick="go('workouts')"><span class="ico">▤</span>Treinos</button>
+ <button data-page="students" onclick="go('students')"><span class="ico">♙</span>Alunos</button>
+ <button data-page="progress" onclick="go('progress')"><span class="ico">↗</span>Evolução</button>
+ <button data-page="library" onclick="go('library')"><span class="ico">▶</span>Conteúdo</button>
+</nav>
+</div>
+<script>
+const KEY='ironpeak_v1';
+let db={students:[],workouts:[],contents:[],lastCalc:null};
+function load(){try{const raw=localStorage.getItem(KEY);if(raw)db={...db,...JSON.parse(raw)}}catch(e){console.warn(e)}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(db));renderAll()}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function fmt(n){return Number(n).toLocaleString('pt-BR',{maximumFractionDigits:2})}
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='progress')drawChart();window.scrollTo({top:0,behavior:'smooth'})}
+document.getElementById('barWeight').addEventListener('change',()=>document.getElementById('customBarWrap').classList.toggle('hide',document.getElementById('barWeight').value!=='custom'));
+document.getElementById('exerciseName').addEventListener('change',()=>document.getElementById('customExerciseWrap').classList.toggle('hide',document.getElementById('exerciseName').value!=='Outro'));
+function getBar(){return document.getElementById('barWeight').value==='custom'?Number(document.getElementById('customBar').value):Number(document.getElementById('barWeight').value)}
+function parsePlates(){return [...new Set(document.getElementById('plates').value.split(',').map(x=>Number(x.trim().replace(',','.'))).filter(x=>Number.isFinite(x)&&x>0))].sort((a,b)=>b-a)}
+function makeCombos(target,plates,mode){
+ // Integer-scaled dynamic programming; use 0.01 kg precision to avoid floating point issues.
+ const scale=100, t=Math.round(target*scale), vals=plates.map(x=>Math.round(x*scale)).filter(x=>x>0);
+ if(t<0)return null;if(t===0)return {sum:0,items:[]};
+ const maxDiff=mode==='exact'?0:Math.round(10*scale);
+ let best=null;
+ // Exact DP up to target + 10kg; minimize difference, then number of plates.
+ const upper=mode==='down'?t:(t+maxDiff);
+ const dp=new Array(upper+1).fill(null);dp[0]={count:0,prev:-1,plate:-1};
+ for(let s=1;s<=upper;s++){for(let i=0;i<vals.length;i++){let p=vals[i];if(s>=p&&dp[s-p]&&(!dp[s]||dp[s-p].count+1<dp[s].count))dp[s]={count:dp[s-p].count+1,prev:s-p,plate:i}}}
+ let candidates=[];
+ if(mode==='exact'){if(dp[t])candidates=[t]}
+ else if(mode==='down'){for(let s=t;s>=0;s--){if(dp[s]){candidates=[s];break}}}
+ else {for(let s=0;s<=upper;s++)if(dp[s])candidates.push(s);candidates.sort((a,b)=>Math.abs(a-t)-Math.abs(b-t)||(dp[a].count-dp[b].count));candidates=candidates.slice(0,1)}
+ if(!candidates.length)return null;
+ let sum=candidates[0],items=[],cur=sum;while(cur>0&&dp[cur]){let st=dp[cur];items.push(plates.findIndex(x=>Math.round(x*scale)===vals[st.plate]));cur=st.prev}
+ const counts={};items.forEach(i=>{let p=plates[i];counts[p]=(counts[p]||0)+1});
+ return {sum:sum/scale,items:Object.entries(counts).map(([weight,count])=>({weight:Number(weight),count})).sort((a,b)=>b.weight-a.weight)}
+}
+function calculate(){
+ const ref=Number(document.getElementById('oneRM').value),pct=Number(document.getElementById('percent').value),bar=getBar(),plates=parsePlates(),mode=document.getElementById('roundMode').value;
+ if(!(ref>=0)||!(pct>=0)||!(bar>=0)||!Number.isFinite(ref+pct+bar)){alert('Confira a carga, o percentual e o peso da barra.');return}
+ const theoretical=ref*pct/100;const side=(theoretical-bar)/2;
+ document.getElementById('theoretical').textContent=fmt(theoretical)+' kg';
+ if(side<0){document.getElementById('actual').textContent='Impossível';document.getElementById('perSide').textContent='—';document.getElementById('effective').textContent='—';document.getElementById('plateResult').textContent='';document.getElementById('calcMessage').textContent='A carga teórica é menor que o peso da barra. Escolha uma barra mais leve ou ajuste a carga.';db.lastCalc=null;return}
+ const result=makeCombos(side,plates,mode);
+ if(!result){document.getElementById('actual').textContent='Sem combinação';document.getElementById('perSide').textContent='—';document.getElementById('effective').textContent='—';document.getElementById('plateResult').textContent='';document.getElementById('calcMessage').textContent='Não foi encontrada uma combinação com as anilhas informadas. Verifique a lista ou altere a preferência.';return}
+ const actual=bar+2*result.sum,eff=ref>0?actual/ref*100:0;
+ document.getElementById('actual').textContent=fmt(actual)+' kg';document.getElementById('perSide').textContent=fmt(result.sum)+' kg';document.getElementById('effective').textContent=fmt(eff)+'%';
+ document.getElementById('plateResult').innerHTML=result.items.map(x=>`<span class="plate">${fmt(x.weight)}${x.count>1?' × '+x.count:''}</span>`).join('')||'<span class="muted">Sem anilhas</span>';
+ const diff=actual-theoretical;
+ document.getElementById('calcMessage').className='notice '+(Math.abs(diff)<0.001?'good':'warn');
+ document.getElementById('calcMessage').textContent=Math.abs(diff)<0.001?'Combinação exata encontrada.':`Carga montável ${diff>0?'acima':'abaixo'} da teórica em ${fmt(Math.abs(diff))} kg. Confira se essa configuração é adequada.`;
+ db.lastCalc={ref,pct,bar,theoretical,actual,perSide:result.sum,effective:eff,plates:result.items};localStorage.setItem(KEY,JSON.stringify(db));updateHome();
+}
+function saveCalc(){if(!db.lastCalc){calculate();if(!db.lastCalc)return}document.getElementById('plannedLoad').value=db.lastCalc.actual;go('workouts');alert('Carga montável enviada para o campo de carga prescrita. Complete os dados da sessão e adicione o exercício.')}
+function addStudent(){const name=document.getElementById('studentName').value.trim();if(!name){alert('Informe o nome do aluno.');return}db.students.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),name,goal:document.getElementById('studentGoal').value,squat:Number(document.getElementById('studentSquat').value)||null,bench:Number(document.getElementById('studentBench').value)||null,deadlift:Number(document.getElementById('studentDeadlift').value)||null,created:new Date().toISOString()});document.getElementById('studentName').value='';['studentSquat','studentBench','studentDeadlift'].forEach(id=>document.getElementById(id).value='');persist()}
+function addWorkout(){const studentId=document.getElementById('workoutStudent').value;const ex=document.getElementById('exerciseName').value==='Outro'?document.getElementById('customExercise').value.trim():document.getElementById('exerciseName').value;if(!ex){alert('Informe o nome do exercício.');return}const sets=Number(document.getElementById('sets').value),reps=Number(document.getElementById('reps').value),load=Number(document.getElementById('plannedLoad').value);if(!(sets>0&&reps>0&&load>=0)){alert('Confira séries, repetições e carga.');return}db.workouts.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),studentId,studentName:studentId==='self'?'Meu treino':(db.students.find(s=>s.id===studentId)||{}).name||'Aluno',name:document.getElementById('workoutName').value.trim()||'Sessão',exercise:ex,sets,reps,plannedLoad:load,actualLoad:load,rpe:document.getElementById('rpe').value||'',notes:document.getElementById('workoutNotes').value.trim(),date:new Date().toISOString()});document.getElementById('workoutNotes').value='';persist()}
+function editWorkout(id){const w=db.workouts.find(x=>x.id===id);if(!w)return;const actual=prompt('Carga realmente executada (kg):',w.actualLoad);if(actual===null)return;const n=Number(actual);if(!Number.isFinite(n)||n<0){alert('Carga inválida.');return}const reps=prompt('Repetições realmente executadas:',w.reps);if(reps===null)return;const r=Number(reps);if(!Number.isInteger(r)||r<0){alert('Repetições inválidas.');return}const rpe=prompt('RPE realizado (opcional):',w.actualRpe||'');w.actualLoad=n;w.actualReps=r;w.actualRpe=rpe||'';w.completed=true;w.completedAt=new Date().toISOString();persist()}
+function deleteWorkout(id){if(confirm('Excluir este registro? Essa ação não pode ser desfeita.')){db.workouts=db.workouts.filter(w=>w.id!==id);persist()}}
+function deleteStudent(id){if(!confirm('Arquivar/remover este aluno do cadastro local? Os treinos existentes serão preservados com o nome registrado.'))return;db.students=db.students.filter(s=>s.id!==id);persist()}
+function addContent(){const title=document.getElementById('contentTitle').value.trim(),url=document.getElementById('contentUrl').value.trim();if(!title){alert('Informe o título.');return}if(url&&!/^https?:\/\//i.test(url)){alert('Use um link iniciado por http:// ou https://.');return}db.contents.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),title,url,category:document.getElementById('contentCategory').value,notes:document.getElementById('contentNotes').value.trim(),date:new Date().toISOString()});document.getElementById('contentTitle').value='';document.getElementById('contentUrl').value='';document.getElementById('contentNotes').value='';persist()}
+function deleteContent(id){if(confirm('Excluir este conteúdo?')){db.contents=db.contents.filter(c=>c.id!==id);persist()}}
+function exportJSON(){download('ironpeak-backup-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(db,null,2),'application/json')}
+function exportCSV(){const rows=[['Data','Atleta','Sessão','Exercício','Séries','Reps prescritas','Carga prescrita','Reps realizadas','Carga executada','RPE','Observações'],...db.workouts.map(w=>[new Date(w.date).toLocaleString('pt-BR'),w.studentName,w.name,w.exercise,w.sets,w.reps,w.plannedLoad,w.actualReps??'',w.actualLoad??'',w.actualRpe??w.rpe,w.notes])];download('ironpeak-sessoes.csv',rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n'),'text/csv;charset=utf-8')}
+function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function importJSON(e){const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{const incoming=JSON.parse(reader.result);if(!incoming||!Array.isArray(incoming.students)||!Array.isArray(incoming.workouts)||!Array.isArray(incoming.contents))throw Error();if(!confirm('A importação substituirá os dados locais atuais. Faça backup antes. Continuar?'))return;db={...db,...incoming};persist();alert('Backup importado.')}catch(err){alert('Arquivo inválido ou incompatível.')}e.target.value=''};reader.readAsText(f)}
+function clearData(){if(!confirm('Tem certeza? Todos os alunos, treinos e conteúdos deste navegador serão apagados.'))return;if(!confirm('Última confirmação: você exportou um backup?'))return;db={students:[],workouts:[],contents:[],lastCalc:null};persist()}
+function renderStudents(){const el=document.getElementById('studentList');el.innerHTML=db.students.length?'<div class="list">'+db.students.map(s=>`<div class="item"><div><strong>${esc(s.name)}</strong><span class="muted small">${esc(s.goal)} · Agachamento ${s.squat??'—'} kg · Supino ${s.bench??'—'} kg · Terra ${s.deadlift??'—'} kg</span></div><button class="btn ghost" onclick="deleteStudent('${s.id}')">Remover</button></div>`).join('')+'</div>':'<div class="empty">Nenhum aluno cadastrado.</div>';const sel=document.getElementById('workoutStudent');const current=sel.value;sel.innerHTML='<option value="self">Meu treino</option>'+db.students.map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join('');if([...sel.options].some(o=>o.value===current))sel.value=current}
+function renderWorkouts(){const el=document.getElementById('workoutList');el.innerHTML=db.workouts.length?'<div class="list">'+[...db.workouts].reverse().map(w=>`<div class="item"><div style="min-width:0"><strong>${esc(w.exercise)} · ${fmt(w.actualLoad??w.plannedLoad)} kg</strong><span class="muted small">${esc(w.studentName)} · ${esc(w.name)} · ${new Date(w.date).toLocaleDateString('pt-BR')}<br>${w.sets} × ${w.reps} prescritas${w.actualReps!==undefined?' · '+w.actualReps+' reps realizadas':''}${w.completed?' · Concluído':''}</span>${w.notes?`<div class="small">${esc(w.notes)}</div>`:''}</div><div class="actions"><button class="btn secondary" onclick="editWorkout('${w.id}')">${w.completed?'Editar':'Registrar'}</button><button class="btn ghost" onclick="deleteWorkout('${w.id}')">×</button></div></div>`).join('')+'</div>':'<div class="empty">Nenhum exercício registrado.</div>'}
+function renderContents(){const el=document.getElementById('contentList');el.innerHTML=db.contents.length?'<div class="list">'+[...db.contents].reverse().map(c=>`<div class="item"><div><strong>${esc(c.title)}</strong><span class="pill">${esc(c.category)}</span>${c.notes?`<div class="muted small">${esc(c.notes)}</div>`:''}${c.url?`<div><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Abrir conteúdo ↗</a></div>`:''}</div><button class="btn ghost" onclick="deleteContent('${c.id}')">×</button></div>`).join('')+'</div>':'<div class="empty">Nenhum conteúdo adicionado.</div>'}
+function updateHome(){document.getElementById('metricStudents').textContent=db.students.length;document.getElementById('metricSessions').textContent=db.workouts.length;document.getElementById('metricLoad').textContent=db.lastCalc?fmt(db.lastCalc.actual)+' kg':'—';const el=document.getElementById('recentSessions');const recent=[...db.workouts].slice(-4).reverse();el.innerHTML=recent.length?'<div class="list">'+recent.map(w=>`<div class="item"><div><strong>${esc(w.exercise)}</strong><span class="muted small">${esc(w.studentName)} · ${new Date(w.date).toLocaleDateString('pt-BR')}</span></div><strong>${fmt(w.actualLoad??w.plannedLoad)} kg</strong></div>`).join('')+'</div>':'<div class="empty">Nenhuma sessão registrada ainda. Vá em “Treinos” para começar.</div>'}
+function renderProgress(){const el=document.getElementById('progressTable');el.innerHTML=db.workouts.length?'<div class="scroll"><table><thead><tr><th>Data</th><th>Atleta</th><th>Exercício</th><th>Prescrito</th><th>Executado</th><th>Reps</th></tr></thead><tbody>'+[...db.workouts].reverse().map(w=>`<tr><td>${new Date(w.date).toLocaleDateString('pt-BR')}</td><td>${esc(w.studentName)}</td><td>${esc(w.exercise)}</td><td>${fmt(w.plannedLoad)} kg</td><td>${fmt(w.actualLoad??w.plannedLoad)} kg</td><td>${w.actualReps??'—'}</td></tr>`).join('')+'</tbody></table></div>':'<div class="empty">Ainda não há dados suficientes para exibir o histórico.</div>';drawChart()}
+function drawChart(){const c=document.getElementById('progressChart');if(!c)return;const ctx=c.getContext('2d'),dpr=window.devicePixelRatio||1,w=c.clientWidth||800,h=220;c.width=w*dpr;c.height=h*dpr;ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);ctx.strokeStyle='#303640';ctx.fillStyle='#a7afba';ctx.font='12px system-ui';for(let i=0;i<5;i++){let y=15+i*(h-40)/4;ctx.beginPath();ctx.moveTo(35,y);ctx.lineTo(w-10,y);ctx.stroke()}const data=db.workouts.slice(-12);if(!data.length){ctx.fillText('Registre sessões para visualizar a evolução.',45,110);return}const vals=data.map(x=>Number(x.actualLoad??x.plannedLoad)||0),max=Math.max(10,...vals)*1.1,min=Math.min(0,...vals);ctx.strokeStyle='#d6dce4';ctx.lineWidth=2;ctx.beginPath();vals.forEach((v,i)=>{let x=42+i*(w-60)/Math.max(1,vals.length-1),y=h-25-(v-min)/(max-min||1)*(h-55);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)});ctx.stroke();vals.forEach((v,i)=>{let x=42+i*(w-60)/Math.max(1,vals.length-1),y=h-25-(v-min)/(max-min||1)*(h-55);ctx.fillStyle='#e3e7ec';ctx.beginPath();ctx.arc(x,y,3.5,0,Math.PI*2);ctx.fill();ctx.fillStyle='#a7afba';ctx.fillText(String(v),x-10,y-10)})}
+function renderAll(){renderStudents();renderWorkouts();renderContents();updateHome();renderProgress()}
+window.addEventListener('resize',()=>{if(document.getElementById('progress').classList.contains('active'))drawChart()});
+load();renderAll();calculate();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>
