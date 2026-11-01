@@ -1,5 +1,5 @@
-const CACHE_NAME = "ironpeak-static-v6";
-const FILES = ["./", "./index.html", "./manifest.webmanifest", "./logo-team-gabriel-castro.png", "./presets/Modulo-Basico-Original.xlsx", "./presets/Modulo-Intermediario-Original.xlsx", "./presets/Modulo-Avancado-Original.xlsx", "./presets/Tabela-de-Porcentagens-Original.xlsx", "./presets/Mobilidades-Original.docx"];
+const CACHE_NAME = "ironpeak-static-v6-1-presets";
+const FILES = ["./", "./index.html", "./manifest.webmanifest", "./logo-team-gabriel-castro.png", "./presets-data.json", "./presets/Modulo-Basico-Original.xlsx", "./presets/Modulo-Intermediario-Original.xlsx", "./presets/Modulo-Avancado-Original.xlsx", "./presets/Tabela-de-Porcentagens-Original.xlsx", "./presets/Mobilidades-Original.docx"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(FILES)));
   self.skipWaiting();
