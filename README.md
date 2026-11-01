@@ -1,14 +1,23 @@
-# IRONPEAK Strength System
+# IRONPEAK Strength System · V5
 
-Protótipo web da Team Gabriel Castro, com identidade visual preta e dourada e logo oficial incluída.
+Protótipo web progressivo exclusivo da Team Gabriel Castro.
 
-## Arquivos
-- `index.html`: aplicativo web.
-- `logo-team-gabriel-castro.png`: logo oficial usada no cabeçalho e ícone.
-- `manifest.webmanifest`: configuração para instalação como app no celular.
-- `sw.js`: service worker do protótipo.
+## O que foi atualizado nesta versão
+- Mantém o núcleo da V4: calculadora de cargas/anilhas, programa de treinamento, cadastro de atletas, evolução, biblioteca e identidade visual original.
+- Perfil próprio do treinador como atleta, com referências de Squat, Bench, Deadlift e Training Max.
+- Diário local de saúde e recuperação: pressão arterial, frequência cardíaca de repouso, SpO₂, sono e observações.
+- Cadastro de competições com data, federação, categoria/modalidade e local.
+- Área IRONPEAK AI COACH com alertas locais simples sobre divergências de carga e repetições registradas.
+- Biblioteca de referências de regulamentos por federação e versão.
+- Registro de colaboradores e funções previstas.
+- Histórico local de algumas alterações e ações.
+- Atualização do cache do aplicativo para V5.
 
-## Importante
-Esta versão continua sendo um protótipo com armazenamento local no navegador. Ela NÃO possui autenticação real, banco de dados em nuvem, sincronização entre dispositivos, permissões seguras por usuário, mensagens push reais ou IA conectada. Não cadastre dados sensíveis nem convide atletas para usar como sistema oficial.
+## Instalação no GitHub Pages
+1. Extraia o ZIP.
+2. Envie os cinco arquivos para a raiz do repositório, substituindo os arquivos de mesmo nome.
+3. Faça commit diretamente na branch `main`.
+4. Aguarde o GitHub Pages publicar e atualize o app no iPhone. Se continuar mostrando a versão antiga, feche o app e abra novamente; o cache do service worker também será renovado.
 
-A próxima etapa técnica é configurar autenticação e banco de dados (por exemplo, Supabase), com regras de acesso por atleta, colaborador e administrador, antes de colocar dados reais.
+## Limitações importantes
+Esta versão continua sendo um protótipo com armazenamento local no navegador. Não possui autenticação real, contas individuais, permissões efetivas, isolamento de dados entre atletas, sincronização entre aparelhos, banco de dados em nuvem ou backup automático. O módulo de equipe não cria convites ou logins. O AI Coach ainda não usa um modelo de IA conectado; os alertas são regras simples e não modificam prescrições. O diário de saúde não faz diagnóstico e não deve ser usado para armazenar dados sensíveis de terceiros. Referências de federações precisam ser preenchidas e conferidas pelo usuário com os documentos oficiais vigentes.

@@ -1,5 +1,5 @@
-const CACHE_NAME = "ironpeak-static-v3";
-const FILES = ["./", "./index.html", "./manifest.webmanifest"];
+const CACHE_NAME = "ironpeak-static-v5";
+const FILES = ["./", "./index.html", "./manifest.webmanifest", "./logo-team-gabriel-castro.png"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(FILES)));
   self.skipWaiting();
