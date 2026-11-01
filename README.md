@@ -1,23 +1,20 @@
-# IRONPEAK Strength System · V5
+# IRONPEAK Strength System · V6 (etapa de presets)
 
-Protótipo web progressivo exclusivo da Team Gabriel Castro.
+Esta versão preserva a base visual e as funções existentes da V5 e acrescenta uma área de acesso aos materiais originais de treinamento.
 
-## O que foi atualizado nesta versão
-- Mantém o núcleo da V4: calculadora de cargas/anilhas, programa de treinamento, cadastro de atletas, evolução, biblioteca e identidade visual original.
-- Perfil próprio do treinador como atleta, com referências de Squat, Bench, Deadlift e Training Max.
-- Diário local de saúde e recuperação: pressão arterial, frequência cardíaca de repouso, SpO₂, sono e observações.
-- Cadastro de competições com data, federação, categoria/modalidade e local.
-- Área IRONPEAK AI COACH com alertas locais simples sobre divergências de carga e repetições registradas.
-- Biblioteca de referências de regulamentos por federação e versão.
-- Registro de colaboradores e funções previstas.
-- Histórico local de algumas alterações e ações.
-- Atualização do cache do aplicativo para V5.
+## Novidades desta etapa
+- Área Presets com acesso aos módulos Básico, Intermediário e Avançado.
+- Tabela original de porcentagens disponível para download.
+- Documento original de mobilidades disponível para download.
+- Os botões baixam cópias com nomes próprios para edição no Excel ou Numbers. Os arquivos-fonte dentro de `presets/` permanecem sem edição.
+- Orientação explícita para inserir PowerBiceps manualmente na cópia individual do atleta.
+- Cache do service worker atualizado para V6 e inclui os materiais.
 
-## Instalação no GitHub Pages
-1. Extraia o ZIP.
-2. Envie os cinco arquivos para a raiz do repositório, substituindo os arquivos de mesmo nome.
-3. Faça commit diretamente na branch `main`.
-4. Aguarde o GitHub Pages publicar e atualize o app no iPhone. Se continuar mostrando a versão antiga, feche o app e abra novamente; o cache do service worker também será renovado.
+## Limitações que permanecem
+- Esta é uma aplicação estática. Cadastro, histórico e registros continuam no armazenamento local do navegador.
+- Não há autenticação real, contas individuais, permissões por função, banco de dados remoto ou sincronização entre dispositivos.
+- A área Presets não edita arquivos Excel dentro do aplicativo nem associa automaticamente a cópia baixada ao cadastro do atleta.
+- O AI Coach continua baseado em regras locais simples, sem modelo de IA conectado.
 
-## Limitações importantes
-Esta versão continua sendo um protótipo com armazenamento local no navegador. Não possui autenticação real, contas individuais, permissões efetivas, isolamento de dados entre atletas, sincronização entre aparelhos, banco de dados em nuvem ou backup automático. O módulo de equipe não cria convites ou logins. O AI Coach ainda não usa um modelo de IA conectado; os alertas são regras simples e não modificam prescrições. O diário de saúde não faz diagnóstico e não deve ser usado para armazenar dados sensíveis de terceiros. Referências de federações precisam ser preenchidas e conferidas pelo usuário com os documentos oficiais vigentes.
+## Publicação no GitHub Pages
+Substitua os arquivos da versão anterior pelos arquivos desta pasta, mantendo a pasta `presets/` e seu conteúdo. Não apague os arquivos antigos antes de guardar um backup.
