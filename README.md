@@ -1,29 +1,16 @@
-# IRONPEAK Strength System — versão inicial
+# IRONPEAK Strength System · V3 (protótipo local)
 
-## O que esta versão já faz
-- Interface responsiva em português.
-- Calculadora de porcentagens e distribuição de anilhas por lado.
-- Cadastro local de alunos e suas marcas informadas.
-- Registro de exercícios/sessões e cargas realizadas.
-- Gráfico simples e tabela do histórico registrado.
-- Biblioteca de links e dicas educativas.
-- Exportação CSV e backup/importação JSON.
-- Base de PWA para instalação quando hospedado por HTTPS.
+## O que mudou nesta versão
+- Identidade visual preta, dourada e branca.
+- Nomenclatura padronizada para Atletas.
+- Programação com duração configurável de 1 a 52 semanas.
+- Seleção do atleta ao montar a programação.
+- Sugestão automática da referência de Squat, Bench e Deadlift a partir dos lifts cadastrados no perfil do atleta.
+- Cargas das séries calculadas automaticamente por percentual, com opção de carga manual.
+- Mantém calculadora de anilhas, registros, gráficos e exportação de backup.
 
-## Como testar
-1. Extraia o ZIP.
-2. Abra `index.html` no navegador para testar a interface e os dados locais.
-3. Para testar a instalação PWA e o modo offline, hospede a pasta em um endereço HTTPS ou rode um servidor local. Service workers não funcionam diretamente por `file://`.
+## Importante: ainda é um protótipo local
+Esta versão NÃO possui login real, banco de dados online, sincronização entre dispositivos ou isolamento de dados por atleta. Os dados ficam no armazenamento local do navegador. Não cadastre dados sensíveis ou use como sistema oficial de acompanhamento até implementar backend, autenticação, permissões e políticas de privacidade.
 
-## Limitações importantes
-Esta é uma primeira versão local, não um sistema multiusuário pronto para alunos acessarem remotamente.
-- Os dados ficam no armazenamento local do navegador/dispositivo.
-- Não há autenticação nem sincronização entre dispositivos.
-- Não há upload real de vídeos; a biblioteca salva links.
-- O gráfico mostra registros recentes, sem análise avançada por exercício.
-- Não há controle de quantidade física de cada anilha, apenas tipos de anilhas informados.
-- O backup deve ser exportado pelo usuário.
-- Antes de usar com dados reais de alunos, será necessário implementar backend, banco de dados online, autenticação, permissões, armazenamento de vídeos e políticas de privacidade.
-
-## Próxima etapa recomendada
-Validar a experiência e a calculadora. Depois conectar um backend com banco de dados e autenticação, mantendo isolamento rigoroso entre treinador e alunos.
+## Publicação
+Substitua os arquivos do repositório GitHub Pages pelos quatro arquivos desta pasta. Faça backup da versão publicada antes de substituir.
