@@ -1,20 +1,20 @@
-# IRONPEAK Strength System · V6 (etapa de presets)
+# IRONPEAK Strength System · V6.1 · Editor interno de planilhas
 
-Esta versão preserva a base visual e as funções existentes da V5 e acrescenta uma área de acesso aos materiais originais de treinamento.
+Esta atualização importa o conteúdo das planilhas originais Básico, Intermediário e Avançado para a biblioteca interna do aplicativo.
 
-## Novidades desta etapa
-- Área Presets com acesso aos módulos Básico, Intermediário e Avançado.
-- Tabela original de porcentagens disponível para download.
-- Documento original de mobilidades disponível para download.
-- Os botões baixam cópias com nomes próprios para edição no Excel ou Numbers. Os arquivos-fonte dentro de `presets/` permanecem sem edição.
-- Orientação explícita para inserir PowerBiceps manualmente na cópia individual do atleta.
-- Cache do service worker atualizado para V6 e inclui os materiais.
+## Como usar
+1. Abra Programa e selecione o atleta.
+2. Escolha Usar preset pronto e selecione Básico, Intermediário ou Avançado; ou abra Presets.
+3. Crie uma cópia editável para o atleta.
+4. Edite as células diretamente no app. As abas originais da planilha são mantidas.
+5. O modelo-base carregado em `presets-data.json` não é alterado pelas edições das cópias.
 
-## Limitações que permanecem
-- Esta é uma aplicação estática. Cadastro, histórico e registros continuam no armazenamento local do navegador.
-- Não há autenticação real, contas individuais, permissões por função, banco de dados remoto ou sincronização entre dispositivos.
-- A área Presets não edita arquivos Excel dentro do aplicativo nem associa automaticamente a cópia baixada ao cadastro do atleta.
-- O AI Coach continua baseado em regras locais simples, sem modelo de IA conectado.
+O PowerBiceps não é inserido automaticamente. Gabriel faz a inclusão manual na cópia do atleta.
 
-## Publicação no GitHub Pages
-Substitua os arquivos da versão anterior pelos arquivos desta pasta, mantendo a pasta `presets/` e seu conteúdo. Não apague os arquivos antigos antes de guardar um backup.
+## Limitações desta etapa
+- O conteúdo de células e fórmulas foi importado. Fórmulas são mantidas como texto e ainda não são recalculadas como no Excel.
+- As cópias são salvas no armazenamento local do navegador/aparelho. Não existe sincronização em nuvem nesta versão.
+- A edição é célula a célula. Exportação de cópias editadas para XLSX ainda não está implementada.
+- Login real, permissões individuais e banco de dados online ainda não estão implementados.
+
+Os arquivos originais permanecem dentro de `presets/` como referência protegida.
