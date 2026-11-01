@@ -1,10 +1,12 @@
 {
   "name": "IRONPEAK Strength System",
   "short_name": "IRONPEAK",
-  "description": "Treinamento de força e powerlifting",
+  "description": "Sistema exclusivo de treinamento de força da Team Gabriel Castro",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#050505",
   "theme_color": "#050505",
-  "icons": []
+  "icons": [
+    {"src": "./logo-team-gabriel-castro.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any maskable"}
+  ]
 }
